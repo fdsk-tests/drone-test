@@ -10,8 +10,6 @@ steps:
   trigger:
     event:
     - push
-
-steps:
 - name: test promote
   image: alpine
   commands:
