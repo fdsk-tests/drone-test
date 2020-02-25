@@ -11,3 +11,5 @@ configure drone client with
 ```
 . .secrets/.drone-client.sh
 ```
+
+...
