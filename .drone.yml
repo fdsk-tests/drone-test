@@ -3,8 +3,19 @@ type: docker
 name: default
    
 steps:
-- name: test
+- name: test push
   image: alpine
   commands:
-  - echo hello
-  - echo world
+  - echo push triggered
+  trigger:
+    event:
+    - push
+
+steps:
+- name: test promote
+  image: alpine
+  commands:
+  - echo promote triggered
+  trigger:
+    event:
+    - promote
