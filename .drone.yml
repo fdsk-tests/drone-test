@@ -1,20 +1,31 @@
+---
 kind: pipeline
 type: docker
-name: default
+name: get updates
 
 steps:
 - name: test push
   image: alpine
   commands:
-  - echo push triggered
-  trigger:
-    event:
-    - push
+  - echo update triggered
 
+trigger:
+  event:
+  - cron
+  cron:
+  - minutely
+
+---
+kind: pipeline
+type: docker
+name: promote
+
+steps:
 - name: test promote
   image: alpine
   commands:
   - echo promote triggered
-  trigger:
-    event:
-    - promote
+
+trigger:
+  event:
+  - promote
