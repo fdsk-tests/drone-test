@@ -18,4 +18,8 @@ run runner with
 docker run -d -v /var/run/docker.sock:/var/run/docker.sock --env-file .secrets/drone-runner.env -p 3000:3000 --restart always --name runner drone/drone-runner-docker:1
 ```
 
-...
+trigger first build with 
+
+```
+curl -X POST -i http://localapp.fdsk.co.uk/api/repos/fdsk-tests/drone-test/builds -H "Authorization: Bearer "
+```

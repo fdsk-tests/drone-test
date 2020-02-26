@@ -9,12 +9,6 @@ steps:
   commands:
   - echo update triggered
 
-trigger:
-  event:
-  - cron
-  cron:
-  - minutely
-
 ---
 kind: pipeline
 type: docker
